@@ -6,7 +6,7 @@
 ## Install
 
 ```sh
-$ npm install --save lightningjs
+$ npm install --save lightning.js
 ```
 
 
@@ -14,6 +14,9 @@ $ npm install --save lightningjs
 
 ```js
 var Lightning = require('lightning.js');
+
+var lightning = new Lightning();
+lightning.line([1,1,2,3,5,8,13,21]);
 
 ```
 
