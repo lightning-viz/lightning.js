@@ -1,4 +1,4 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
+# lightning.js
 
 > Node.js client for the Lightning data visualization server.
 
@@ -25,10 +25,3 @@ lightning.line([1,1,2,3,5,8,13,21]);
 
 MIT © [Matthew Conlen](http://mathisonian.com)
 
-
-[npm-url]: https://npmjs.org/package/lightningjs
-[npm-image]: https://badge.fury.io/js/lightningjs.svg
-[travis-url]: https://travis-ci.org/mathisonian/lightningjs
-[travis-image]: https://travis-ci.org/mathisonian/lightningjs.svg?branch=master
-[daviddm-url]: https://david-dm.org/mathisonian/lightningjs.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/mathisonian/lightningjs
