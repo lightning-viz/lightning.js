@@ -40,7 +40,7 @@ setInterval(function() {
 
 ## Examples
 
-See [the tests](./test.js)
+See [the tests](./test/test.js)
 
 ## Available Methods
 
