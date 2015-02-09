@@ -1,6 +1,6 @@
 {
   "name": "lightning.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Node.js client for the Lightning data visualization server.",
   "homepage": "http://lightning-viz.org",
   "author": {
