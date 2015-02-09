@@ -8,7 +8,7 @@
     "email": "code@mathisonian.com",
     "url": "http://mathisonian.com"
   },
-  "repository": "lightning-viz/lightning.js",
+  "repository": "http://github.com/lightning-viz/lightning.js",
   "license": "MIT",
   "main": "index.js",
   "keywords": [
