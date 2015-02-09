@@ -4,6 +4,8 @@ var expect = require('expect.js');
 var Lightning = require('../');
 var Visualization = require('../lib/visualization');
 var fs = require('fs');
+var _ = require('lodash');
+
 
 describe('lightningjs node module', function () {
 
@@ -24,6 +26,40 @@ describe('lightningjs node module', function () {
     it('should plot a line', function(done) {
         lightning
             .line([1,1,2,3,5,8,13,21])
+            .then(function(viz) {
+                expect(viz).to.be.a(Visualization);
+                expect(viz.id).to.not.be(null);
+                done();
+            });
+    });
+
+    it('should plot a matrix', function(done) {
+
+        var mat = _.map(_.range(100), function() {
+            return _.map(_.range(100), function() {
+                return Math.random();
+            });
+        });
+
+        lightning
+            .matrix(mat)
+            .then(function(viz) {
+                expect(viz).to.be.a(Visualization);
+                expect(viz.id).to.not.be(null);
+                done();
+            });
+    });
+
+    it.only('should plot a stacked line plot', function(done) {
+
+        var series = _.map(_.range(5), function() {
+            return _.map(_.range(20), function() {
+                return Math.random();
+            });
+        });
+
+        lightning
+            .lineStacked(series)
             .then(function(viz) {
                 expect(viz).to.be.a(Visualization);
                 expect(viz.id).to.not.be(null);

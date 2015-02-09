@@ -24,7 +24,8 @@
     "lodash": "~3.0.1",
     "request-promise": "~0.3.3",
     "remove-trailing-slash": "~0.1.0",
-    "bluebird": "~2.9.4"
+    "bluebird": "~2.9.4",
+    "param-case": "~1.1.1"
   },
   "devDependencies": {
     "expect.js": "~0.3.1",
