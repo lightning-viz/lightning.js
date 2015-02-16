@@ -19,21 +19,42 @@ $ npm install --save lightning.js
 var Lightning = require('lightning.js');
 
 var lightning = new Lightning();
-lightning.line([1,1,2,3,5,8,13,21]);
+lightning.line([1,1,2,3,5,8,13,21])
+    .then(function(viz) {
+        viz.open(); // opens in web browser
+    });
 
 ```
 
-### Updating
+### Updating Visualizations
 
 ```js
 var Lightning = require('lightning.js');
 
 var lightning = new Lightning();
-var viz = lightning.lineStreaming([1,1,2,3,5,8,13,21]);
 
-setInterval(function() {
-    viz.appendData([Math.random()]);
-});
+lightning.lineStreaming([1,1,2,3,5,8,13,21])
+    .then(function(viz) {
+        setInterval(function() {
+            viz.appendData([Math.random()]); // appends to existing data
+            // or 
+            // viz.updateData([Math.random()]); // replaces existing data
+        });    
+    });
+
+
+
+// with an image gallery
+lightning.gallery([fs.createReadStream(__dirname + '/img/example.png'), fs.createReadStream(__dirname + '/img/example2.png')])
+    .then(function(viz) {
+        viz.appendImage(/* another image */); // adds another image
+    });
+
+// with a single image
+lightning.gallery(fs.createReadStream(__dirname + '/img/example.png'))
+    .then(function(viz) {
+        viz.updateImage(fs.createReadStream(__dirname + '/img/example2.png')); // replaces existing image
+    });
 
 
 ```
@@ -48,12 +69,14 @@ setInterval(function() {
 lightning
     .line([1,1,2,3,5,8,13,21])
     .then(function(viz) {
+        viz.open(); // opens in web browser
     });
     
 // multiple lines
 lightning
     .line([[0,1,2], [3,4,5], [6,7,8])
     .then(function(viz) {
+        viz.open(); // opens in web browser
     });
 ```
 
@@ -199,6 +222,24 @@ var values = [0.33, 0.6, 0.07];
 
 lightning
     .map(regions, values)
+    .then(function(viz) {
+    });
+```
+
+#### image(image)
+
+```js
+// with a single image
+lightning.image(fs.createReadStream(__dirname + '/img/example.png'))
+    .then(function(viz) {
+    });
+
+```
+
+#### gallery(images)
+
+```js
+lightning.gallery([fs.createReadStream(__dirname + '/img/example.png'), fs.createReadStream(__dirname + '/img/example2.png')])
     .then(function(viz) {
     });
 ```

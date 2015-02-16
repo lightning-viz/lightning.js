@@ -22,11 +22,12 @@
     "d3"
   ],
   "dependencies": {
-    "lodash": "~3.0.1",
-    "request-promise": "~0.3.3",
-    "remove-trailing-slash": "~0.1.0",
     "bluebird": "~2.9.4",
-    "param-case": "~1.1.1"
+    "lodash": "~3.0.1",
+    "open": "0.0.5",
+    "param-case": "~1.1.1",
+    "remove-trailing-slash": "~0.1.0",
+    "request-promise": "~0.3.3"
   },
   "devDependencies": {
     "expect.js": "~0.3.1",
