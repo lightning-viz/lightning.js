@@ -74,7 +74,7 @@ lightning
     
 // multiple lines
 lightning
-    .line([[0,1,2], [3,4,5], [6,7,8])
+    .line([[0,1,2], [3,4,5], [6,7,8]])
     .then(function(viz) {
         viz.open(); // opens in web browser
     });
