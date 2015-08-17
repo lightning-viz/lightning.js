@@ -90,21 +90,6 @@ lightning
     });
 ```
 
-#### stackedLine(series)
-
-```js
-var series = _.map(_.range(5), function() {
-    return _.map(_.range(20), function() {
-        return Math.random();
-    });
-});
-
-lightning
-    .lineStacked(series)
-    .then(function(viz) {
-    });
-```
-
 #### matrix(mat)
 
 ```js
@@ -231,6 +216,15 @@ lightning
 ```js
 // with a single image
 lightning.image(fs.createReadStream(__dirname + '/img/example.png'))
+    .then(function(viz) {
+    });
+
+```
+#### imagePoly(image)
+
+```js
+// with a single image
+lightning.imagePoly(fs.createReadStream(__dirname + '/img/example.png'))
     .then(function(viz) {
     });
 

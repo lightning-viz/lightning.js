@@ -45,8 +45,8 @@ describe('lightningjs node module', function () {
 
     it('should plot a matrix', function(done) {
 
-        var mat = _.map(_.range(100), function() {
-            return _.map(_.range(100), function() {
+        var mat = _.map(_.range(10), function() {
+            return _.map(_.range(10), function() {
                 return Math.random();
             });
         });
@@ -70,6 +70,51 @@ describe('lightningjs node module', function () {
             .then(function(viz) {
                 expect(viz).to.be.a(Visualization);
                 expect(viz.id).to.not.be(null);
+                done();
+            });
+    });
+
+    it('should plot a scatter with additional data', function(done) {
+
+        var x = _.range(100);
+        var y = _.map(_.range(100), Math.random);
+
+        lightning
+            .scatter(x, y, {
+                color: [166, 24, 32],
+                xaxis: 'test x axis label',
+                yaxis: 'test y axis label'
+            })
+            .then(function(viz) {
+                expect(viz).to.be.a(Visualization);
+                expect(viz.id).to.not.be(null);
+                done();
+            }).catch(function (err) {
+                console.log(err);
+                done();
+            });
+    });
+
+    it('should plot a scatter with additional data and options', function(done) {
+
+        var x = _.range(100);
+        var y = _.map(_.range(100), Math.random);
+
+        lightning
+            .scatter(x, y, {
+                color: [166, 24, 32],
+                xaxis: 'test x axis label',
+                yaxis: 'test y axis label',
+                alpha: 0.5,
+                zoom: false,
+                tooltips: false
+            })
+            .then(function(viz) {
+                expect(viz).to.be.a(Visualization);
+                expect(viz.id).to.not.be(null);
+                done();
+            }).catch(function (err) {
+                console.log(err);
                 done();
             });
     });
@@ -154,23 +199,6 @@ describe('lightningjs node module', function () {
 
         lightning
             .graph(x, y, mat)
-            .then(function(viz) {
-                expect(viz).to.be.a(Visualization);
-                expect(viz.id).to.not.be(null);
-                done();
-            });
-    });
-
-    it('should plot a stacked line plot', function(done) {
-
-        var series = _.map(_.range(5), function() {
-            return _.map(_.range(20), function() {
-                return Math.random();
-            });
-        });
-
-        lightning
-            .lineStacked(series)
             .then(function(viz) {
                 expect(viz).to.be.a(Visualization);
                 expect(viz.id).to.not.be(null);
