@@ -1,6 +1,6 @@
 # lightning.js
 
-> Node.js client for the Lightning data visualization server.
+> Javascript client (node + browser) for the Lightning data visualization server.
 
 
 ## Install
