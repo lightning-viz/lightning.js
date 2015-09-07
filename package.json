@@ -1,7 +1,7 @@
 {
   "name": "lightning.js",
   "version": "1.5.0",
-  "description": "Node.js client for the Lightning data visualization server.",
+  "description": "Javascript (node + browser) client for the Lightning data visualization server.",
   "homepage": "http://lightning-viz.org",
   "author": {
     "name": "Matthew Conlen",
@@ -28,7 +28,10 @@
     "dataviz",
     "data viz",
     "three.js",
-    "d3"
+    "d3",
+    "node",
+    "browser",
+    "browserify"
   ],
   "dependencies": {
     "bluebird": "~2.9.4",
