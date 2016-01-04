@@ -26,6 +26,23 @@ lightning.line([1,1,2,3,5,8,13,21])
 
 ```
 
+### Plotting Options
+
+```js
+var Lightning = require('lightning.js');
+
+var myOpts = {
+    color: [255,0,0] // changes the color of the line from default to red
+    };
+
+var lightning = new Lightning();
+lightning.line([1,1,2,3,5,8,13,21], myOpts) // optional argument for plotting options
+    .then(function(viz) {
+        viz.open(); // opens in web browser
+    });
+
+```
+
 ### Updating Visualizations
 
 ```js
